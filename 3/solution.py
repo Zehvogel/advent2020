@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import numpy as np
-
 def positions(data, down, right):
     for i in range(len(data)//down):
         yield data[i*down][i*right % len(data[0])]
