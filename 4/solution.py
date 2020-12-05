@@ -45,7 +45,8 @@ data = rawdata.split("\n\n")
 
 required_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
 
-n_valid = 0
+part1_valid = 0
+part2_valid = 0
 
 for passport in data:
     kv_data = dict([s.partition(":")[::2] for s in passport.split()])
@@ -55,6 +56,7 @@ for passport in data:
         valid &= field in kv_data
 
     if valid:
+        part1_valid += 1
         valid &= val_byr(kv_data["byr"])
         valid &= val_iyr(kv_data["iyr"])
         valid &= val_eyr(kv_data["eyr"])
@@ -64,6 +66,7 @@ for passport in data:
         valid &= val_pid(kv_data["pid"])
 
     if valid:
-        n_valid += 1
+        part2_valid += 1
 
-print(n_valid)
+print(part1_valid)
+print(part2_valid)
