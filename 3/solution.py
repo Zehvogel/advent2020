@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# SPDX-License-Identifier: MIT
+
 def positions(data, down, right):
     for i in range(len(data)//down):
         yield data[i*down][i*right % len(data[0])]

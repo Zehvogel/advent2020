@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# SPDX-License-Identifier: MIT
+
 import sys
 
 data = sys.stdin.read().split()
